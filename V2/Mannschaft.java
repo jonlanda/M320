@@ -19,11 +19,11 @@ public class Mannschaft {
         }
 
         for (int i = 0; i < 1; i++) {
-            double randomDouble = new Random().nextDouble(210 + 170) + 170;
+            double randomDouble = new Random().nextDouble() + 170;
             goalies.add(new Goalie(Integer.toString(i), randomDouble));
         }
 
-        System.out.println(new Spieler("Name").spielen()); // default
+        System.out.println(new Spieler("Name").spielen());
         System.out.println(angreifer.get(0).spielen());
         System.out.println(verteidiger.get(0).spielen());
         System.out.println(goalies.get(0).spielen());
