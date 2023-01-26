@@ -1,17 +1,16 @@
 package V3;
 
-import V3.Börse.börse;
-
-public class newyork implements börse {
+public class newyork implements börse2 {
 
     @Override
-    public int getValueMicrosoft() {
-        return 120;
-    }
-
-    @Override
-    public int getValueCreditSuisse() {
-        return 1;
+    public int getValue(String name) {
+        int value = 0;
+        if (name == "credit suisse") {
+            value = 1;
+        } else if (name == "microsoft") {
+            value = 120;
+        }
+        return value;
     }
 
 }

@@ -1,18 +1,14 @@
 package V3;
 
-import V3.Börse.börse;
-
-public class zürich implements börse {
-
+public class zürich implements börse2 {
     @Override
-    public int getValueMicrosoft() {
-        return 80;
+    public int getValue(String name) {
+        int value = 0;
+        if (name == "credit suisse") {
+            value = 3;
+        } else if (name == "microsoft") {
+            value = 80;
+        }
+        return value;
     }
-
-    @Override
-    public int getValueCreditSuisse() {
-        // TODO Auto-generated method stub
-        return 4;
-    }
-
 }
