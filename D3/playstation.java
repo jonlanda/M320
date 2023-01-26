@@ -41,22 +41,21 @@ public class playstation {
         for (Games g : games) {
             if (g.getName().equals(gameName)) {
                 if (g.getGekauft() == true) {
-                    System.out.println("Sie haben dieses Spiel schon mal gekauft!");
+                    System.out.println("SIE HABEN DIESES SPIEL SCHON MAL GEKAUFT!");
                 } else {
                     int newSpeicher = this.speicher - g.getGrösse();
                     if (newSpeicher <= 0) {
                         System.out.println("NICHT GENUG SPEICHERPLATZ!");
                     } else {
-                        setSpeicher(newSpeicher);
-                        g.setGekauft(true);
-                    }
-                    int newGuthaben = user.getGuthaben() - g.getPreis();
-                    if (newGuthaben <= 0) {
-                        System.out.println("NICHT GENUG GUTHABEN!");
-                    } else {
-                        user.setGuthaben(newGuthaben);
-                        g.setGekauft(true);
-                        System.out.println("KAUF WAR ERFOLGREICH!");
+                        int newGuthaben = user.getGuthaben() - g.getPreis();
+                        if (newGuthaben <= 0) {
+                            System.out.println("NICHT GENUG GUTHABEN!");
+                        } else {
+                            setSpeicher(newSpeicher);
+                            user.setGuthaben(newGuthaben);
+                            g.setGekauft(true);
+                            System.out.println("KAUF WAR ERFOLGREICH!");
+                        }
                     }
                 }
             }
